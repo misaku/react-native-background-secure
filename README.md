@@ -1,5 +1,7 @@
 # react-native-background-secure
-permit block screen
+Android Only
+
+Allow you hide the screen when your app goes to background mode.
 ## Installation
 
 ```sh
