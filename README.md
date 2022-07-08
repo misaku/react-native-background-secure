@@ -1,19 +1,30 @@
 # react-native-background-secure
-permit block screen
+Android Only
+
+Allow you hide the screen when your app goes to background mode.
 ## Installation
 
 ```sh
 npm install react-native-background-secure
+or
+yarn add react-native-background-secure
 ```
 
 ## Usage
 
 ```js
-import { multiply } from "react-native-background-secure";
+import { AppState } from 'react-native';
+import { blockScreen, unblockScreen } from "react-native-background-secure";
 
 // ...
 
-const result = await multiply(3, 7);
+const subscriptionFocus = AppState.addEventListener('focus', () => {
+  unblockScreen();
+});
+
+const subscriptionBlur = AppState.addEventListener('blur', () => {
+  blockScreen();
+});
 ```
 
 ## Contributing
